@@ -1,0 +1,25 @@
+import java.util.*;
+class Solution {
+    public long solution(long n) {
+        
+        // long형 변수 n을 String형 변수 number로 변경
+        String number = Long.toString(n);
+        
+        // String형 배열 arr에 number의 값을 한글자씩 잘라서 넣기
+        String arr[] = new String[number.length()];
+        for (int i = 0; i < number.length(); i++){
+            arr[i] = number.substring(i, i + 1);
+        }
+        
+        // 내림차순 정렬
+        Arrays.sort(arr, Collections.reverseOrder());
+        
+        String result = "";
+        for (String i : arr) {
+            result += i;
+        }
+        
+        // Long.parseLong으로 하지 않고, Integer.parseInt로 하면 런타임 에러 발생
+        return Long.parseLong(result);
+    }
+}
