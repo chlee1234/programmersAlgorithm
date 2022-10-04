@@ -1,0 +1,11 @@
+class Solution {
+    public String solution(String s) {
+        int a = s.length();
+        String s1;
+        if ( a % 2 == 0 )   // 글자수가 짝수일 때
+            s1 = s.substring(a/2 - 1, (a/2) + 1);
+        else // 글자수가 홀수일 때
+            s1 = s.substring((a/2), (a/2) + 1);
+        return s1;
+    }
+}
