@@ -1,0 +1,18 @@
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        int cnt = 0;
+        for(int i = 2; i<=n;i++){
+            for(int j = 1; j <= i;j++){
+                if(i % j == 0){
+                    cnt++;
+                }
+            }
+            if(cnt == 2){
+                answer++;               
+            }
+            cnt = 0;
+        }
+        return answer;
+    }
+}      // 처음에 무지성으로 for문 if문으로만 썼을 때...... 당연히 작은 수는 통과하지만 큰 수가 입력됐을때는 시간초과로 실패ㅠ
